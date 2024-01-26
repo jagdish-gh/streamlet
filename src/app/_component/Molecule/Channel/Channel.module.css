@@ -1,0 +1,23 @@
+.channel{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 200px;
+    height: 186px;
+    align-items: center;
+    text-align: center;
+    padding: 12px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+.channel:hover{
+    transform: scale(1.07);
+}
+.channelLogo{
+    width: 100px;
+    border-radius: 12px;
+    border: 1px solid gray;
+}

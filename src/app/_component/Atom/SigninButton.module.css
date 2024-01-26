@@ -1,0 +1,54 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    position: sticky;
+    top: 0;
+    margin: 24px;
+}
+.rightSide{
+    display: flex;
+    align-items: center;
+}
+.username{
+    color: rgb(72, 72, 220);
+}
+.loginPage{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.loginContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.loginButton{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+.logoutButton{
+    margin-left: 12px;
+}
+

@@ -1,23 +1,37 @@
 "use client";
 import React from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
+import styles from './SigninButton.module.css';
+import ThemeSwitch from "./ThemeSwitch";
 const SigninButton = () => {
   const { data: session } = useSession();
 
   if (session && session.user) {
     return (
-      <div className="flex gap-4 ml-auto">
-        <p className="text-sky-600">{session.user.name}</p>
-        <button onClick={() => signOut()} className="text-red-600">
-          Sign Out
-        </button>
+      <div className={styles.header}>
+        <p className={styles.username}>{session.user.name}</p>
+        <div className={styles.rightSide}>
+          <ThemeSwitch/>
+          <button onClick={() => signOut()} className={`${styles.logoutButton} ${styles.loginButton}`}>
+            Sign Out
+          </button>
+        </div>
+        
       </div>
     );
   }
   return (
-    <button onClick={() => signIn()} className="text-green-600 ml-auto">
-      Sign In
-    </button>
+    <div className={styles.loginPage}>
+      <div className={styles.loginContainer}>
+        Welcome to the Streamlet.
+        <p className={styles.description}>Start your awesome journey of personalization.</p>
+        <button onClick={() => signIn()} className={styles.loginButton}>
+              Let's Start
+        </button>
+      </div>
+      
+    </div>
+   
   );
 };
 
