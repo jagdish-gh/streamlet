@@ -26,7 +26,7 @@ const SigninButton = () => {
         Welcome to the Streamlet.
         <p className={styles.description}>Start your awesome journey of personalization.</p>
         <button onClick={() => signIn()} className={styles.loginButton}>
-              Let's Start
+              Let&rsquo;s Start
         </button>
       </div>
       

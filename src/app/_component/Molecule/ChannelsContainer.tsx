@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import styles from './ChannelsContainer.module.css';
 import Channel from "./Channel/Channel";
+import { YouTubeSubscription } from "@/app/_util/fetchYouTubeSubscriptions";
 
 const MyPage: React.FC = () => {
   const { data: session } = useSession();
@@ -12,7 +13,6 @@ const MyPage: React.FC = () => {
   useEffect(() => {
     if (session) {
       fetchYouTubeSubscriptions(session).then(subscriptions => {
-        console.log({subscriptions})
         setSubscriptions(subscriptions);
       });
     }
