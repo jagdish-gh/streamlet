@@ -1,7 +1,6 @@
 .channel{
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     gap: 1rem;
     width: 200px;
     height: 186px;
@@ -20,4 +19,7 @@
     width: 100px;
     border-radius: 12px;
     border: 1px solid gray;
+}
+.channelTitle{
+    white-space: wrap;
 }

@@ -2,11 +2,19 @@
   /* Your default theme */
   --background: white;
   --foreground: black;
+  --video-background: #32325a;
+ 
+}
+[data-theme='light'] {
+  --background: white;
+  --foreground: black;
+  --video-background: #32325a;
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --background: black;
   --foreground: white;
+  --video-background: #32325a;
 }
 
 * {

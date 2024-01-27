@@ -33,7 +33,6 @@ export type YouTubeSubscription = {
 async function fetchYouTubeSubscriptions(session: any): Promise<YouTubeSubscription[]> {
   
   const accessToken = session.accessToken;
-
   const response = await fetch("https://www.googleapis.com/youtube/v3/subscriptions?part=snippet&mine=true&maxResults=50", {
     headers: {
       Authorization: `Bearer ${accessToken}`,

@@ -5,7 +5,6 @@ import styles from './SigninButton.module.css';
 import ThemeSwitch from "./ThemeSwitch";
 const SigninButton = () => {
   const { data: session } = useSession();
-
   if (session && session.user) {
     return (
       <div className={styles.header}>
@@ -31,7 +30,6 @@ const SigninButton = () => {
       </div>
       
     </div>
-   
   );
 };
 

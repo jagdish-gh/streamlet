@@ -14,7 +14,7 @@ const handler = NextAuth({
       },
     }),
   ],
-  secret: process.env.SECRET,
+  secret: process.env.SecretKey as string,
   callbacks: {
     async jwt({ token, account }) {
       // Persist the OAuth access_token to the token right after signin

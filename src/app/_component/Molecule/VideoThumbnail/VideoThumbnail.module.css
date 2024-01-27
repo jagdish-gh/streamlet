@@ -1,0 +1,28 @@
+.videoThumbnailBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    gap: 12px;
+    width: 240px;
+    /* background: var(--video-background); */
+    border-radius: 32px 8px;
+}
+.videoThumbnailBox:hover{
+    transform: scale(1.07);
+}
+.videoThumbnail{
+    position: relative;
+}
+.videoTitle{
+    white-space: wrap;
+}
+.image{
+    object-fit: contain;
+    padding: 12px 0px;
+}
