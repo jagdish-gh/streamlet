@@ -4,6 +4,7 @@ import { Provider as ThemeProvider } from "../_util/providers";
 import{ Providers as SessionProviders } from "../_util/sessionProviders";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import SigninButton from "../_component/Atom/SigninButton";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
         <body className={inter.className}>
         <SessionProviders>
           <ThemeProvider>
+          <SigninButton />
             {children}
           </ThemeProvider>
         </SessionProviders>
