@@ -18,6 +18,7 @@
 }
 .username{
     color: rgb(72, 72, 220);
+    cursor: pointer;
 }
 .loginPage{
     height: 100vh;
