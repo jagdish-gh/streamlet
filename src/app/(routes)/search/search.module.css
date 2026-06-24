@@ -1,14 +1,12 @@
-.homeSection {
+.searchPage {
   margin: 0 auto;
   max-width: 1240px;
   padding: 36px clamp(18px, 4vw, 48px) 64px;
 }
 
-.sectionHeader {
-  align-items: end;
+.searchHeader {
   display: grid;
   gap: 8px;
-  grid-template-columns: 1fr auto;
   margin-bottom: 28px;
 }
 
@@ -16,7 +14,6 @@
   color: var(--accent);
   font-size: 0.8rem;
   font-weight: 900;
-  grid-column: 1 / -1;
   text-transform: uppercase;
 }
 
@@ -24,11 +21,11 @@
   color: var(--foreground);
   font-size: clamp(1.8rem, 4vw, 3rem);
   line-height: 1.05;
+  overflow-wrap: anywhere;
 }
 
 .summary {
   color: var(--muted);
-  font-weight: 700;
 }
 
 .message {
@@ -36,19 +33,11 @@
   border: 1px solid var(--border);
   border-radius: 8px;
   color: var(--muted);
-  margin-bottom: 20px;
   padding: 16px;
 }
 
-.channelsContainer {
+.resultsGrid {
   display: grid;
-  gap: 18px;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-}
-
-@media (max-width: 560px) {
-  .sectionHeader {
-    align-items: start;
-    grid-template-columns: 1fr;
-  }
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 }

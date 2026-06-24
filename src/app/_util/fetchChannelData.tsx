@@ -42,9 +42,11 @@
   // }
   
   async function fetchChannelData(session: any,channelId: string, maxResults: number): Promise<channelData[]> {
-    
     const accessToken = session?.accessToken;
-    console.log(accessToken)
+    if (!accessToken) {
+      throw new Error("Missing Google access token. Please sign in again.");
+    }
+
     const response = await fetch(`https://www.googleapis.com/youtube/v3/search?channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}&type=video`, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
@@ -52,6 +54,10 @@
     });
   
     const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data?.error?.message ?? "Failed to fetch channel videos.");
+    }
+
     return data.items as channelData[];
   }
   

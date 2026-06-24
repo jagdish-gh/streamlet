@@ -1,56 +1,149 @@
-.header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: white;
-    color: black;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    position: sticky;
-    top: 0;
-    margin: 24px;
-    z-index: 2;
-}
-.rightSide{
-    display: flex;
-    align-items: center;
-}
-.username{
-    color: rgb(72, 72, 220);
-    cursor: pointer;
-}
-.loginPage{
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+.header {
+  align-items: center;
+  backdrop-filter: blur(18px);
+  background: color-mix(in srgb, var(--background) 88%, transparent);
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  gap: 18px;
+  grid-template-columns: auto minmax(240px, 560px) auto;
+  padding: 14px clamp(18px, 4vw, 48px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-.loginContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: black;
-    gap: 10px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-.loginButton{
-    padding: 10px;
-    border-radius: 10px;
-    border: none;
-    background-color: black;
-    color: white;
-    font-weight: 700;
-    cursor: pointer;
-}
-.logoutButton{
-    margin-left: 12px;
+.brand {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: var(--foreground);
+  cursor: pointer;
+  display: inline-flex;
+  gap: 10px;
+  min-width: max-content;
 }
 
+.brandMark {
+  align-items: center;
+  background: var(--accent);
+  border-radius: 8px;
+  color: #ffffff;
+  display: inline-flex;
+  font-weight: 900;
+  height: 36px;
+  justify-content: center;
+  width: 36px;
+}
+
+.brandName {
+  font-size: 1.05rem;
+  font-weight: 900;
+}
+
+.rightSide {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.username {
+  color: var(--muted);
+  font-size: 0.9rem;
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.loginPage {
+  align-items: center;
+  background:
+    linear-gradient(120deg, color-mix(in srgb, var(--accent) 14%, transparent), transparent 44%),
+    var(--background);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.loginContainer {
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  color: var(--foreground);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 420px;
+  padding: 36px;
+  text-align: center;
+  width: 100%;
+}
+
+.loginTitle {
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  line-height: 1;
+}
+
+.description {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.loginButton {
+  background: var(--foreground);
+  border: 0;
+  border-radius: 6px;
+  color: var(--background);
+  cursor: pointer;
+  font-weight: 800;
+  min-height: 40px;
+  padding: 0 16px;
+}
+
+.loginButton:hover {
+  opacity: 0.86;
+}
+
+.logoutButton {
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+}
+
+@media (max-width: 900px) {
+  .header {
+    grid-template-columns: 1fr auto;
+  }
+
+  .header form {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+  }
+
+  .rightSide {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+
+@media (max-width: 560px) {
+  .header {
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .brandName,
+  .username {
+    display: none;
+  }
+
+  .loginContainer {
+    padding: 28px 22px;
+  }
+}

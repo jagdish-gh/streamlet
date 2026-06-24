@@ -12,14 +12,17 @@ export default function VideoThumbnail({ video }: any) {
     }
     const onVideoClick = useCallback(()=>{
         router.push(`/${video.id.videoId}`)
-    },[])
+    },[router, video.id.videoId])
     
     return (
-        <div className={styles.videoThumbnailBox} onClick={onVideoClick}>
+        <button className={styles.videoThumbnailBox} onClick={onVideoClick} type="button">
             <div className={styles.videoThumbnail} >
                 <Image src={video.snippet.thumbnails.high.url} alt="youtube thumbnail"  className={styles.image} height={180} width={240}/>
             </div>
-            <p className="videoTitle" title={video.snippet.title}>{getTitle()}</p>
-        </div>
+            <div className={styles.videoMeta}>
+                <p className={styles.videoTitle} title={video.snippet.title}>{getTitle()}</p>
+                <p className={styles.channelName}>{video.snippet.channelTitle}</p>
+            </div>
+        </button>
     );
 }

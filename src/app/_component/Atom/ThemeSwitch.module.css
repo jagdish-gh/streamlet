@@ -1,0 +1,25 @@
+.themeButton,
+.placeholder {
+  align-items: center;
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--foreground);
+  display: inline-flex;
+  height: 40px;
+  justify-content: center;
+  width: 40px;
+}
+
+.themeButton {
+  cursor: pointer;
+}
+
+.themeButton:hover {
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
+}
+
+.themeButton svg {
+  height: 18px;
+  width: 18px;
+}

@@ -1,7 +1,17 @@
-.channelPage{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: 20px;
-    justify-content: center;
+.channelPage {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  margin: 0 auto;
+  max-width: 1240px;
+  padding: 24px clamp(18px, 4vw, 48px) 64px;
+}
+
+.message {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--muted);
+  grid-column: 1 / -1;
+  padding: 16px;
 }

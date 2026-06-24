@@ -2,11 +2,8 @@ import type { Metadata } from "next";
 import Favicon from '/public/favicon.ico'
 import { Provider as ThemeProvider } from "../_util/providers";
 import{ Providers as SessionProviders } from "../_util/sessionProviders";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import SigninButton from "../_component/Atom/SigninButton";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Streamlet - Personalize Your YouTube Journey",
@@ -22,7 +19,7 @@ export default function RootLayout({
   return (
    
       <html lang="en" suppressHydrationWarning>
-        <body className={inter.className}>
+        <body>
         <SessionProviders>
           <ThemeProvider>
           <SigninButton />

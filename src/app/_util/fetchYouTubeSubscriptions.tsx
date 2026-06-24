@@ -31,8 +31,11 @@ export type YouTubeSubscription = {
 // }
 
 async function fetchYouTubeSubscriptions(session: any): Promise<YouTubeSubscription[]> {
-  
   const accessToken = session.accessToken;
+  if (!accessToken) {
+    throw new Error("Missing Google access token. Please sign in again.");
+  }
+
   const response = await fetch("https://www.googleapis.com/youtube/v3/subscriptions?part=snippet&mine=true&maxResults=50", {
     headers: {
       Authorization: `Bearer ${accessToken}`,
@@ -40,6 +43,10 @@ async function fetchYouTubeSubscriptions(session: any): Promise<YouTubeSubscript
   });
 
   const data = await response.json();
+  if (!response.ok) {
+    throw new Error(data?.error?.message ?? "Failed to fetch YouTube subscriptions.");
+  }
+
   return data.items as YouTubeSubscription[];
 }
 

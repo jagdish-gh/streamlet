@@ -8,6 +8,6 @@ export default function BackButton() {
         router.back();
       };
   return (
-    <button onClick={handleBack} className={styles.button_74}>Back</button>
+    <button onClick={handleBack} className={styles.backButton}>Back</button>
   )
 }
