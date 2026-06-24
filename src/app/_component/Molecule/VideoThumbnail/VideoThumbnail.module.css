@@ -50,10 +50,15 @@
   -webkit-line-clamp: 2;
 }
 
-.channelName {
+.channelName,
+.uploadDate {
   color: var(--muted);
   font-size: 0.9rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.uploadDate {
+  font-size: 0.82rem;
 }

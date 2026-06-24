@@ -93,7 +93,16 @@ const MyPage: React.FC = () => {
     {error && <p className={styles.message}>{error}</p>}
     <div className={styles.channelsContainer}>
       {subscriptions?.map(subscription => (
-        <Channel key={subscription.id} subscription={subscription} />
+        <Channel
+          key={subscription.id}
+          subscription={subscription}
+          onUnsubscribe={(subscriptionId: string) => {
+            setSubscriptions(currentSubscriptions =>
+              currentSubscriptions.filter(currentSubscription => currentSubscription.id !== subscriptionId)
+            );
+            setTotalResults(currentTotal => currentTotal ? currentTotal - 1 : currentTotal);
+          }}
+        />
       ))}
     </div>
     <div className={styles.loadSentinel} ref={sentinelRef}>

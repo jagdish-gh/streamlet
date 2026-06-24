@@ -1,17 +1,13 @@
 .channel {
-  align-items: center;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
   box-shadow: 0 8px 24px rgba(20, 23, 31, 0.04);
   color: var(--foreground);
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  min-height: 184px;
-  padding: 18px 14px;
-  text-align: center;
+  display: grid;
+  gap: 12px;
+  min-height: 232px;
+  padding: 14px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
   width: 100%;
 }
@@ -20,6 +16,21 @@
   border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
   box-shadow: var(--shadow);
   transform: translateY(-3px);
+}
+
+.channelContent {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 154px;
+  padding: 4px 0;
+  text-align: center;
+  width: 100%;
 }
 
 .channelLogo {

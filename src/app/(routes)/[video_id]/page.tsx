@@ -1,4 +1,5 @@
 import BackButton from '@/app/_component/Atom/BackButton';
+import WatchSubscriptionPanel from './WatchSubscriptionPanel';
 import styles from './video.module.css';
 
 export default function Video({ params }: { params: { video_id: string } }) {
@@ -16,6 +17,7 @@ export default function Video({ params }: { params: { video_id: string } }) {
           title="YouTube video player"
         />
       </div>
+      <WatchSubscriptionPanel videoId={videoID} />
     </div>
     </>
   );

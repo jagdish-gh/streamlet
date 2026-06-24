@@ -2,8 +2,8 @@ import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
 import type { JWT } from "next-auth/jwt";
 
-const YOUTUBE_READONLY_SCOPE = "https://www.googleapis.com/auth/youtube.readonly";
-const GOOGLE_AUTH_SCOPE = `openid profile email ${YOUTUBE_READONLY_SCOPE}`;
+const YOUTUBE_SCOPE = "https://www.googleapis.com/auth/youtube.force-ssl";
+const GOOGLE_AUTH_SCOPE = `openid profile email ${YOUTUBE_SCOPE}`;
 
 async function refreshAccessToken(token: JWT): Promise<JWT> {
   if (!token.refreshToken) {

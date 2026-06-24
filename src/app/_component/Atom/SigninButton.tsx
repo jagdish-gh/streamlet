@@ -6,7 +6,7 @@ import ThemeSwitch from "./ThemeSwitch";
 import { useRouter } from "next/navigation";
 import SearchBar from "./SearchBar";
 
-const GOOGLE_AUTH_SCOPE = "openid profile email https://www.googleapis.com/auth/youtube.readonly";
+const GOOGLE_AUTH_SCOPE = "openid profile email https://www.googleapis.com/auth/youtube.force-ssl";
 
 const SigninButton = () => {
   const { data: session } = useSession();

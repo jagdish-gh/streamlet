@@ -1,0 +1,47 @@
+.subscriptionControl {
+  display: grid;
+  gap: 6px;
+  justify-items: stretch;
+  width: 100%;
+}
+
+.subscribeButton,
+.unsubscribeButton {
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 800;
+  min-height: 36px;
+  padding: 0 12px;
+}
+
+.subscribeButton {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.subscribeButton:hover {
+  background: var(--accent-strong);
+}
+
+.unsubscribeButton {
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+}
+
+.unsubscribeButton:hover {
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
+}
+
+.subscribeButton:disabled,
+.unsubscribeButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.error {
+  color: var(--accent);
+  font-size: 0.78rem;
+  line-height: 1.25;
+}
