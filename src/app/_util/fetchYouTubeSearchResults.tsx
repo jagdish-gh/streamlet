@@ -35,11 +35,18 @@ export type YouTubeSearchResult = {
   };
 };
 
+export type YouTubeSearchResultsPage = {
+  items: YouTubeSearchResult[];
+  nextPageToken?: string;
+  totalResults?: number;
+};
+
 async function fetchYouTubeSearchResults(
   session: any,
   query: string,
   maxResults = 24,
-): Promise<YouTubeSearchResult[]> {
+  pageToken?: string,
+): Promise<YouTubeSearchResultsPage> {
   const accessToken = session?.accessToken;
   if (!accessToken) {
     throw new Error("Missing Google access token. Please sign in again.");
@@ -53,6 +60,10 @@ async function fetchYouTubeSearchResults(
     type: "video",
   });
 
+  if (pageToken) {
+    params.set("pageToken", pageToken);
+  }
+
   const response = await fetch(`https://www.googleapis.com/youtube/v3/search?${params.toString()}`, {
     headers: {
       Authorization: `Bearer ${accessToken}`,
@@ -64,7 +75,11 @@ async function fetchYouTubeSearchResults(
     throw new Error(data?.error?.message ?? "Failed to fetch YouTube search results.");
   }
 
-  return data.items as YouTubeSearchResult[];
+  return {
+    items: data.items as YouTubeSearchResult[],
+    nextPageToken: data.nextPageToken,
+    totalResults: data.pageInfo?.totalResults,
+  };
 }
 
 export default fetchYouTubeSearchResults;

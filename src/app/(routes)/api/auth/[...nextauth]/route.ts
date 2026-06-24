@@ -65,7 +65,7 @@ const handler = NextAuth({
       }
     })
   ],
-  secret: process.env.SecretKey as string,
+  secret: (process.env.NEXTAUTH_SECRET ?? process.env.SecretKey) as string,
   callbacks: {
     async jwt({ token, account }) {
       if (account) {

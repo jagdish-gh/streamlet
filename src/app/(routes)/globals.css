@@ -61,3 +61,19 @@ button,
 input {
   font: inherit;
 }
+
+body:has(.streamletHeader) {
+  padding-top: 73px;
+}
+
+@media (max-width: 900px) {
+  body:has(.streamletHeader) {
+    padding-top: 137px;
+  }
+}
+
+@media (max-width: 560px) {
+  body:has(.streamletHeader) {
+    padding-top: 125px;
+  }
+}

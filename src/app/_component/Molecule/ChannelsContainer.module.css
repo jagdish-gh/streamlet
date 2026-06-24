@@ -46,6 +46,14 @@
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
 }
 
+.loadSentinel {
+  color: var(--muted);
+  font-size: 0.95rem;
+  min-height: 56px;
+  padding: 24px 0 0;
+  text-align: center;
+}
+
 @media (max-width: 560px) {
   .sectionHeader {
     align-items: start;

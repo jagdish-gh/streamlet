@@ -26,7 +26,7 @@ const SigninButton = () => {
   }
   if (session && session.user) {
     return (
-      <div className={styles.header}>
+      <div className={`${styles.header} streamletHeader`}>
         <button className={styles.brand} onClick={onNameClick} type="button">
           <span className={styles.brandMark}>S</span>
           <span className={styles.brandName}>Streamlet</span>
